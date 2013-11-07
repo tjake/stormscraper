@@ -72,7 +72,7 @@ public class LocalRunner {
                 .shuffleGrouping("scraper_bolt", "outgoinglinks_stream");
 
         builder.setBolt("incominglinks_writer", new CassandraWriterBolt())
-                .shuffleGrouping("scraper_bolt", "outgoinglinks_stream");
+                .shuffleGrouping("scraper_bolt", "incominglinks_stream");
 
 
         //Writes html for each page
